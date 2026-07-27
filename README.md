@@ -10,7 +10,7 @@ Live demo: https://tenderops-gazette-dubehvansh22-2337s-projects.vercel.app
 
 ## The problem
 
-Techno Med Services (TMS), a medical equipment distributor supplying government hospitals across Jammu & Kashmir (SKIMS, GMC Srinagar, GMC Jammu, SMHS, AIIMS Jammu), wins business almost entirely through GeM (Government e-Marketplace) tenders. New tenders are published constantly, buried across categories, and easy to miss — a missed deadline is lost revenue. Manually checking the portal every day doesn't scale.
+Many small and mid-sized suppliers — for example, a medical equipment distributor supplying government hospitals — win business almost entirely through GeM (Government e-Marketplace) tenders. New tenders are published constantly, buried across categories, and easy to miss — a missed deadline is lost revenue. Manually checking the portal every day doesn't scale.
 
 ## What TenderOps does
 

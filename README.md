@@ -62,7 +62,11 @@ app/
   globals.css
 ```
 
-## Running locally
+## Deployment
+
+TenderOps is live and running on Vercel — see the link at the top of this document. That's the version to use; nothing needs to be run locally to try it.
+
+For development purposes, the project can also be run locally:
 
 ```bash
 npm install
@@ -70,7 +74,7 @@ npm run build
 npm run start
 ```
 
-Requires environment variables for Supabase (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`), the Anthropic API (`ANTHROPIC_API_KEY`), and Telegram (`TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`) — configured as project secrets in Vercel for the deployed instance.
+This requires environment variables for Supabase (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`), the Anthropic API (`ANTHROPIC_API_KEY`), and Telegram (`TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`) — already configured as project secrets on the live Vercel deployment.
 
 ## Current state / what's next
 

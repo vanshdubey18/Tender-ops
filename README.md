@@ -1,6 +1,6 @@
 # TenderOps
 
-**AI agent that monitors government e-tender portals (GeM) for medical equipment distributors, scores relevant tenders, and alerts the team before deadlines are missed.**
+**AI agent that monitors government e-tender portals (GeM) for any business, scores relevant tenders against that business's profile, and alerts the team before deadlines are missed.**
 
 Built for the IIT Jammu AI First Hackathon 2026 — Round 2 (Prototype Development & MVP) by team **404 Not Found**.
 
@@ -10,19 +10,23 @@ Live demo: https://tenderops-gazette-dubehvansh22-2337s-projects.vercel.app
 
 ## The problem
 
-Many small and mid-sized suppliers — for example, a medical equipment distributor supplying government hospitals — win business almost entirely through GeM (Government e-Marketplace) tenders. New tenders are published constantly, buried across categories, and easy to miss — a missed deadline is lost revenue. Manually checking the portal every day doesn't scale.
+Small and mid-sized suppliers of every kind — medical equipment, construction materials, IT hardware, office supplies, whatever they sell — win business through GeM (Government e-Marketplace) tenders. New tenders are published constantly, buried across categories, and easy to miss — a missed deadline is lost revenue. Manually checking the portal every day doesn't scale, no matter what sector you're in.
 
 ## What TenderOps does
 
-- **Scans** GeM for new tenders matching a business's product categories and location.
+TenderOps is sector-agnostic — it works for any business that bids on GeM tenders. A business sets up its profile once (what it sells, its categories, its location), and TenderOps takes it from there:
+
+- **Scans** GeM for new tenders matching that business's product categories and location.
 - **Scores** each tender for relevance against the business's profile, so the team sees the ones worth bidding on first, not a raw firehose of listings.
 - **Case files** — every scored tender gets a short written rationale explaining *why* it matched, so a non-technical reviewer can trust the score.
 - **Alerts** the team on Telegram the moment a strong match is found, with the tender details and a direct link back into the app.
 - **Bid Expert** *(MVP placeholder)* — a per-tender assistant panel where the team can eventually get help drafting bid paperwork; wired into the UI and alert links now, backend AI drafting is the next milestone.
 
+The live demo is seeded with a medical equipment distributor as one illustrative example — the underlying scan, scoring, and alert pipeline has no medical-specific logic and works the same way for any product category or industry.
+
 ## How it works
 
-1. A business profile is set up once during onboarding (sector, product categories, location).
+1. A business profile is set up once during onboarding (sector, product categories, location) — any sector.
 2. A scan (scheduled via cron, or triggered on demand from the dashboard) pulls current GeM tender listings.
 3. Each tender is scored against the business profile using an LLM reasoning pass, producing a relevance score and a short "case file" explaining the reasoning.
 4. High-relevance matches are pushed to the team's Telegram, and surfaced in the dashboard's Case Files tab.

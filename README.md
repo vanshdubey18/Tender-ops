@@ -36,6 +36,8 @@ The live demo is seeded with a medical equipment distributor as one illustrative
 ## Tech stack
 
 - **Next.js 14** (App Router) + **React 18** + **TypeScript**
+- **Apify** — runs a hosted actor for raw GeM portal discovery, surfacing live tender listings
+- **Custom scraping pipeline** — built on top of Apify's discovery layer: downloads each tender's bid PDF directly and runs it through an LLM extraction pass to pull structured fields (bid number, deadlines, EMD, location, etc.), adding a depth of structured data Apify's raw listing alone doesn't provide
 - **Supabase** — business profiles, tender records, scan history
 - **Anthropic API** (`@anthropic-ai/sdk`) — tender relevance scoring and case-file reasoning
 - **Telegram Bot API** — real-time alerts
@@ -52,7 +54,7 @@ app/
   bid-expert/page.tsx      per-tender bid assistant (MVP placeholder UI)
   api/
     scan/mock/route.ts     demo scan endpoint (seeded data, drives the live demo)
-    cron/run/route.ts      scheduled production scan pipeline
+    cron/run/route.ts      scheduled production scan pipeline (calls the Apify GeM scraper)
     telegram/confirm/route.ts
   lib/
     supabaseClient.ts
